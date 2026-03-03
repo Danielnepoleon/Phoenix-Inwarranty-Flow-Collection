@@ -25,7 +25,7 @@ jobs:
         run: |
              newman run 'Inwarranty-flow_Collection.postman_collection.json' \
              -e QA.postman_environment.json \
-             -d testData.csv
+             -d testData.csv \
              -r cli,html-extra
       - name: Upload a newman report
         if: always()
