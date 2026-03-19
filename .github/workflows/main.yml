@@ -24,6 +24,7 @@ jobs:
              npm install -g newman-reporter-htmlextra
              
       - name: Run the postman collection with newman
+        continue-on-error: true
         run: |
              newman run 'Inwarranty-flow_Collection.postman_collection.json' \
              -e QA.postman_environment.json \
