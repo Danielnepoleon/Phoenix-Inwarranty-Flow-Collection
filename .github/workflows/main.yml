@@ -18,11 +18,11 @@ jobs:
         with:
           node-version: '22'
           
-      - name: Install newman and html-extra globally
+      - name: Install dependencies locally
         run: |
-             npm install -g newman
-             npm install -g newman-reporter-htmlextra
-             
+          npm init -y
+          npm install newman newman-reporter-htmlextra   
+          
       - name: Run the postman collection with newman
         continue-on-error: true
         run: |
