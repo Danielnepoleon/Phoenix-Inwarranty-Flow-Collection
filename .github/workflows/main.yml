@@ -28,7 +28,7 @@ jobs:
              newman run 'Inwarranty-flow_Collection.postman_collection.json' \
              -e QA.postman_environment.json \
              -d testData.csv \
-             -r cli,html-extra
+             -r cli,html-extra \
              --reporter-html-extra-export newman/report.html
              
       - name: Upload a newman report
