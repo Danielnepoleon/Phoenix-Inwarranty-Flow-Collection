@@ -26,11 +26,16 @@ jobs:
       - name: Run the postman collection with newman
         continue-on-error: true
         run: |
-             newman run 'Inwarranty-flow_Collection.postman_collection.json' \
-             -e QA.postman_environment.json \
-             -d testData.csv \
-             -r cli,html-extra \
-             --reporter-html-extra-export newman/report.html
+          mkdir -p newman
+          newman run 'Inwarranty-flow_Collection.postman_collection.json' \
+            -e QA.postman_environment.json \
+            -d testData.csv \
+            -r cli,html-extra \
+            --reporter-html-extra-export newman/report.html
+
+      - name: Verify report
+        run: |
+           ls -l newman
              
       - name: Upload a newman report
         if: always()
