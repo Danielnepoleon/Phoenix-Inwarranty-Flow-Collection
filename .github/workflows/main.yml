@@ -9,7 +9,7 @@ on:
 
 jobs:
   run-postman-tests:
-    runs-on: My EC2 Github Runner
+    runs-on: githubRunner
     steps:
       - name: Checkout
         uses: actions/checkout@v6.0.2
